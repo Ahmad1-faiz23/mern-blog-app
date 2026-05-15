@@ -30,7 +30,7 @@ function Home() {
       setLoading(true);
 
       const res = await axios.get(
-        "http://localhost:5000/api/stories"
+        "https://mern-blog-app.onrender.com/api/stories"
       );
 
       console.log(res.data);
@@ -56,7 +56,7 @@ function Home() {
         localStorage.getItem("token");
 
       const res = await axios.post(
-        `http://localhost:5000/api/stories/${id}/bookmark`,
+        `https://mern-blog-app.onrender.com/api/stories/${id}/bookmark`,
         {},
         {
           headers: {
