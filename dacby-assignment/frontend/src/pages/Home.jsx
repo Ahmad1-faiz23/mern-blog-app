@@ -5,6 +5,9 @@ import { toast } from "react-toastify";
 
 function Home() {
 
+  const API =
+    import.meta.env.VITE_API_URL;
+
   const [stories, setStories] =
     useState([]);
 
@@ -30,7 +33,7 @@ function Home() {
       setLoading(true);
 
       const res = await axios.get(
-        "https://mern-blog-app.onrender.com/api/stories"
+        `${API}/api/stories`
       );
 
       console.log(res.data);
@@ -56,7 +59,7 @@ function Home() {
         localStorage.getItem("token");
 
       const res = await axios.post(
-        `https://mern-blog-app.onrender.com/api/stories/${id}/bookmark`,
+        `${API}/api/stories/${id}/bookmark`,
         {},
         {
           headers: {
